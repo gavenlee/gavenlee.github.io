@@ -5,13 +5,6 @@ dd = d.getDate();
 y = d.getFullYear();
 
 //测试
-if (m == 3 && dd == 9) {
-    document.getElementsByTagName("html")[0].setAttribute("style", "filter: grayscale(80%);");
-    if (sessionStorage.getItem("isPopupWindow") != "1") {
-        Swal.fire("今天是九一八事变" + (y - 1931).toString() + "周年纪念日\n🪔勿忘国耻，振兴中华🪔");
-        sessionStorage.setItem("isPopupWindow", "1");
-    }
-}
 // 公祭日
 if (m == 9 && dd == 18) {
     document.getElementsByTagName("html")[0].setAttribute("style", "filter: grayscale(60%);");
@@ -52,7 +45,7 @@ if (m == 10 && dd <= 3) {//国庆节
 }
 if (m == 8 && dd == 15) {//搞来玩的，小日子投降
     if (sessionStorage.getItem("isPopupWindow") != "1") {
-        Swal.fire("小日子已经投降" + (y - 1945).toString() + "年了😃");
+        Swal.fire("小八嘎已经投降" + (y - 1945).toString() + "年了😃");
         sessionStorage.setItem("isPopupWindow", "1");
     }
 }
@@ -130,7 +123,6 @@ if ((y == 2023 && m == 12 && dd == 22) || (y == 2024 && m == 12 && dd == 21) || 
 var lunar = calendarFormatter.solar2lunar();
 
 //农历采用汉字计算，防止出现闰月导致问题
-
 if ((lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初六") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初五") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初四") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初三") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初二") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初一") || (lunar["IMonthCn"] == "腊月" && lunar["IDayCn"] == "三十") || (lunar["IMonthCn"] == "腊月" && lunar["IDayCn"] == "廿九")) {
     //春节，本来只有大年三十到初六，但是有时候除夕是大年二十九，所以也加上了
     if (sessionStorage.getItem("isPopupWindow") != "1") {
@@ -170,6 +162,13 @@ if ((lunar["IMonthCn"] == "九月" && lunar["IDayCn"] == "初九")) {
     //重阳节
     if (sessionStorage.getItem("isPopupWindow") != "1") {
         Swal.fire("重阳节快乐\n独在异乡为异客，每逢佳节倍思亲");
+        sessionStorage.setItem("isPopupWindow", "1");
+    }
+}
+if ((lunar["IMonthCn"] == "腊月" && lunar["IDayCn"] == "十二")) {
+    //女朋友生日
+    if (sessionStorage.getItem("isPopupWindow") != "1") {
+        Swal.fire("生日快乐！\我还会一如既往的陪着你！😘");
         sessionStorage.setItem("isPopupWindow", "1");
     }
 }

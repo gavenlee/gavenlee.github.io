@@ -197,3 +197,17 @@
 }
 /* 黑夜霓虹灯效果结束 */
 
+/* 腾讯地图：欢迎信息 */
+#welcome-info {
+  /* background: linear-gradient(45deg, #e1b9f4, #d754f1); */
+  border-radius: 18px;
+  padding: 8px;
+  background: rgb(164, 89, 209,0.29);
+  backdrop-filter: blur(25px);
+  border-radius: 18px;
+  /* color: white; */
+  /* border: var(--border-style); */
+}
+[data-theme="dark"] #welcome-info {
+  background: #212121;
+}
