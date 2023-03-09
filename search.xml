@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Java一些思路</title>
+      <link href="/2023/03/09/Java%E6%80%9D%E8%B7%AF/"/>
+      <url>/2023/03/09/Java%E6%80%9D%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h1><h2 id="同属性不同名称对象传值"><a href="#同属性不同名称对象传值" class="headerlink" title="同属性不同名称对象传值"></a>同属性不同名称对象传值</h2><p>直接继承就好</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 程序设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一篇md</title>
       <link href="/2023/03/07/20230307/"/>
       <url>/2023/03/07/20230307/</url>
@@ -291,9 +318,9 @@
       
         <tags>
             
-            <tag> MySql </tag>
-            
             <tag> Java </tag>
+            
+            <tag> MySql </tag>
             
         </tags>
       
