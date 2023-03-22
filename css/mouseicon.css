@@ -1,0 +1,9 @@
+body {
+    cursor: url("/img/mouse/defaultpurple.cur"),
+        default;
+}
+a,span，
+img {
+    cursor: url("/img/mouse/pointerpurple.cur"),
+        default;
+}
