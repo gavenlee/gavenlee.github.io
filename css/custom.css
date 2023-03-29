@@ -425,3 +425,10 @@ svg.icon {
   transform: translate(-50%, -48px);
 }
 /*-------------------------------------------评论区css结束----------------------------------------------------------*/
+.about_github{
+  background: #fafafa;
+  border-radius: 20px;
+  padding: 12px;
+  margin: 5px;
+  border: 1px solid #c4c2c2;
+}

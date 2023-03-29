@@ -1,0 +1,53 @@
+@keyframes animated-border {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
+    }
+    100% {
+       box-shadow: 0 0 0 20px rgba(255,255,255,0);
+    }
+  }
+  #aboutwebbox {
+    animation: animated-border 1.5s infinite;
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .aboutwebcard{
+    background: rgba(255, 255, 255, 0.01) !important;
+    color: white !important;
+    font-size: 28px !important;
+  }
+  .aboutwebtitle{
+    color: white;
+    text-align: center;
+  }
+  .aboutwebcard div.btns a{
+    background: rgba(255, 255, 255, 0.01) !important;
+  }
+  .fleekpho{
+    border-radius: 12px !important;
+    width: auto !important;
+  }
+  .vercle{
+    margin-top: -34px !important;
+  }
+  .netlify{
+    margin-top: -66px !important;
+  }
+  .railway{
+    margin-top: -98px !important;
+  }
+  .fleek{
+    margin-top: -124px !important;
+  }
+  .img-wrap{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  /* 11 */
