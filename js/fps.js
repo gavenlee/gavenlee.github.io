@@ -8,6 +8,7 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
             }
         );
     }();
+
     var frame = 0;
     var allFrameCount = 0;
     var lastTime = Date.now();

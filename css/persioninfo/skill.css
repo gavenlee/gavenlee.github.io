@@ -1,0 +1,163 @@
+/*技能*/
+#skills-tags-group-all {
+	display:flex;
+	transform:rotate(0);
+	transition:.3s
+}
+#skills-tags-group-all .tags-group-wrapper {
+	margin-top:40px;
+	display:flex;
+	flex-wrap:nowrap;
+	animation:rowup 40s linear infinite
+}
+#skills-tags-group-all .tags-group-icon-pair {
+	margin-left:1rem
+}
+#skills-tags-group-all .tags-group-icon {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:#fff;
+	font-size:66px;
+	font-weight:700;
+	box-shadow:0 2px 16px -3px rgba(0, 0, 0, 0.15);
+	width:120px;
+	height:120px;
+	border-radius:30px
+}
+#skills-tags-group-all .tags-group-icon img {
+	width:60%;
+	margin:0 auto!important
+}
+#skills-tags-group-all .tags-group-icon-pair .tags-group-icon:nth-child(even) {
+	margin-top:1rem;
+	transform:translate(-60px)
+}
+#skills-tags-group-all .etc {
+	margin-right:10px;
+	margin-top:10px
+}
+#random-banner #skills-tags-group-all {
+	transform:rotate(-30deg)
+}
+.skills {
+	display:flex;
+	justify-content:center;
+	align-items:flex-start;
+	flex-direction:column;
+	width:50%;
+	min-height:450px
+}
+.skills .skill-icon {
+	width:32px;
+	height:32px;
+	border-radius:32px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-right:8px
+}
+.skills .skills-list {
+	display:flex;
+	opacity:0;
+	transition:.3s;
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+	flex-wrap:wrap;
+	flex-direction:row;
+	margin-top:10px
+}
+.skills .skill-info {
+	display:flex;
+	align-items:center;
+	margin-right:10px;
+	margin-top:10px;
+	background:#18171d;
+	border-radius:40px;
+	padding:4px 12px 4px 8px;
+	border:1px solid #42444a;
+	box-shadow:0 8px 16px -4px #2c2d300c;
+}
+.skills .skill-icon img {
+	width:18px;
+	height:18px;
+	margin:0 auto!important
+}
+.skills .skills-style-group {
+	position:relative
+}
+.author-content-item.skills .skills-style-group {
+	position:relative
+}
+.skills:hover .skills-style-group #skills-tags-group-all {
+	opacity:0
+}
+.skills:hover .skills-style-group .skills-list {
+	opacity:1
+}
+.author-content-item .card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+.author-content-item .author-content-item-tips {
+    opacity: .8;
+    font-size: .6rem;
+    margin-bottom: .5rem;
+}
+.author-content-item .card-content .author-content-item-title {
+    margin-bottom: .5rem;
+}
+.author-content-item .author-content-item-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+}
+.author-content-item.skills .skills-style-group {
+    position: relative;
+}
+.skills .skills-style-group {
+    position: relative;
+}
+
+[data-theme=dark] img {
+    filter: brightness(1);
+}
+img {
+    border-style: none;
+    border-radius: 8px;
+}
+.author-content.author-content-item {
+	height:19rem;
+	background-color:#0084ff;
+	background-position:left 28%;
+	background-repeat:no-repeat;
+	background-size:cover;
+	color:#fff;
+	overflow:hidden;
+	margin-top:0;
+	background-image:linear-gradient(-45deg,#0084ff,#0f4667,#2a6973 150%,#67044d);
+	background-size:400%;
+	animation:gradient 15s ease infinite
+}
+.author-content-item.comic-content .author-content-item-tips,.author-content-item.comic-content .author-content-item-title {
+	z-index:2;
+	color:#fff;
+	pointer-events:none
+}
+@keyframes rowup {
+	0% {
+	transform:translateX(0)
+}
+100% {
+	transform:translateX(-50%)
+}
+}
