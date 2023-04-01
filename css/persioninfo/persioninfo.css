@@ -9,11 +9,11 @@ h2:hover span:nth-child(1){
     transform: translateY(-18px);
 }
 h2 span:nth-child(1){
-    text-shadow: -3px -3px 3px #000, 3px 2px 1px #a7f;
+    text-shadow: -3px -3px 3px #a7f, 3px 2px 1px #a7f;
     top: 0;
     left: 0;
     position: absolute;
-    color: #000;
+    color: #fff;
     transition: 0.5s;
     clip-path: polygon(0 0,100% 0,100% 50%,0% 50%);
     overflow: hidden;
@@ -22,11 +22,11 @@ h2:hover span:nth-child(2){
     transform: translateY(18px);
 }
 h2 span:nth-child(2){
-    text-shadow: -3px -3px 3px #000, 3px 2px 1px #a7f;
+    text-shadow: -3px -3px 3px #a7f, 3px 2px 1px #a7f;
     top: 0;
     left: 0;
     position: absolute;
-    color: #000;
+    color: #fff;
     transition: 0.5s;
     clip-path: polygon(0 50%,100% 50%,100% 100%,0% 100%);
     overflow: hidden;
@@ -222,7 +222,7 @@ h2:hover span:nth-child(3){
 .author-content-item {
     width: 49%;
     border-radius: 24px;
-    background: linear-gradient( 133deg,#aa77ffa3 0,#62cdff78 100%);
+    /*background: linear-gradient( 133deg,#aa77ffa3 0,#62cdff78 100%);*/
     border: 1px solid #42444a;
     box-shadow: 0 8px 16px -4px #2c2d300c;
     position: relative;
@@ -276,5 +276,166 @@ h2:hover span:nth-child(3){
 }
 .aboutsiteTips .mask span:nth-child(4) {
 	background-image:linear-gradient(45deg,#fa7671 50%,#f45f7f)
+}
+.author-content-item .author-content-item-tips {
+	opacity:.8;
+	font-size:.6rem;
+	margin-bottom:.5rem
+}
+.author-content-item.comic-content .author-content-item-tips,.author-content-item.comic-content .author-content-item-title {
+	z-index:2;
+	color:#fff;
+	pointer-events:none
+}
+#console .author-content-item-tips {
+	opacity:.8;
+	font-size:.6rem;
+	margin-bottom:.5rem
+}
+/*关于性格*/
+/* 关于页面我的性格 */
+.author-content-item.personalities {
+    overflow: hidden;
+    position: relative;
+    width: 59%;
+    background: linear-gradient( 10deg,#aa77ffa3 40%,#62cdff78 100%);
+  }
+  
+  .author-content-item.personalities .title2 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.1;
+  }
+  
+  .author-content-item.personalities .image {
+    position: absolute;
+    right: -40px;
+    bottom: -10rem;
+    transition: transform 2s cubic-bezier(0.13, 0.45, 0.21, 1.02);
+  }
+  
+  .author-content-item.personalities:hover .image {
+    transform: rotate(-10deg);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .author-content-item.personalities {
+      min-height: 360px;
+    }
+  
+    .author-content-item.personalities .image {
+      right: -70px;
+    }
+  }
+  .author-content-item .author-content-item-tips {
+    opacity: 0.8;
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .author-content-item .author-content-item-title {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  /* 文章tips */
+.post-tips {
+    color: var(--sevene-gray);
+    font-size: 14px;
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+  }
+  
+  .post-tips a {
+    color: var(--sevene-gray) !important;
+    border: none !important;
+  }
+  
+  .post-tips a:hover {
+    color: var(--sevene-main) !important;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .post-tips {
+      left: 1rem;
+    }
+  }
+  /* 关于页面我的照片 */
+
+.author-content-item.myphoto {
+    height: 60%;
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+    width: 39%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .author-content-item.myphoto img {
+    position: absolute;
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+  }
+  
+  .author-content-item.myphoto:hover img {
+    min-width: 105%;
+    transition: 2s;
+  }
+  
+  .author-content-item.myphoto .myphoto-title {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: var(--sevene-maskbgdeep);
+    padding: 0.5rem 2rem;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transform: translateZ(0);
+  }
+@media screen and (max-width:500px){
+    .author-content .myInfoAndSayHello {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        background: linear-gradient( 83deg,#aa77ff8c 0,#62cdff4d 40%);
+        background-size: 200%;
+        animation: gradient 15s ease infinite;
+        width: 100%;
+    }
+    .largefont {
+        font-size: 36px;
+    }
+    .author-content-item.aboutsiteTips {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient( 276deg,#aa77ffa3 0,#62cdff78 100%);
+        margin-bottom: -16px
+    }
+    
+    .author-content-item.careers {
+        width: 100%;
+        min-height: 400px;
+        background: linear-gradient( 253deg,#aa77ffa3 0,#62cdff78 100%);
+    }
+    .author-content-item.personalities {
+        margin-top: -18px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        background: linear-gradient( 10deg,#aa77ffa3 40%,#62cdff78 100%);
+    }
+    .myheadphoto{
+        display: none !important;
+    }
 }
 
