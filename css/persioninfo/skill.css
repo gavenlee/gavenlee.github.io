@@ -70,7 +70,36 @@
 	left:0;
 	flex-wrap:wrap;
 	flex-direction:row;
-	margin-top:10px
+	margin-top:10px;
+}
+
+@media screen and (max-width:768px){
+	.skills .skills-list {
+		display:flex;
+		opacity:0;
+		transition:.3s;
+		position:absolute;
+		width:100%;
+		top:0;
+		left:0;
+		flex-wrap:wrap;
+		flex-direction:row;
+		margin-top:10px;
+		animation: run 40s linear infinite;
+	}
+}
+@keyframes run {
+    0% {
+        top: 0;
+    }
+	50% {
+		top: -100px;
+		display: none;
+	}
+    100% {
+        top: -200px;
+		display: none;
+    }
 }
 .skills .skill-info {
 	display:flex;

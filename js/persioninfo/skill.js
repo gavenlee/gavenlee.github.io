@@ -1,3 +1,4 @@
+//个人页面 技能栈颜色随机生成
 $(function() {   //方法一
     $(".randomcolor").each(function() {
         var random = 'rgb(' + Math.random()*255 + ',' + Math.random()*255 + ',' + Math.random()*255 + ')';
@@ -5,6 +6,7 @@ $(function() {   //方法一
     });
 });
 
+//个人页面 生涯横向鼠标滚动
 $(function() {   //方法一
     if (document.getElementById("category-bar-items")){
         let xscroll = document.getElementById("category-bar-items");
@@ -17,3 +19,4 @@ $(function() {   //方法一
       }, false);
     }
 });
+
