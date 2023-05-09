@@ -10,6 +10,9 @@
 大家可以根据自己喜好进行调节，不用拘泥于我的样式！*/ 
 
 /* 页面样式调节 */
+#post font{
+  color: black;
+}
 :root {
   --trans-light: rgb(255, 255, 255,0.29);
   --trans-light-wen: rgba(255, 255, 255, 0.9);
@@ -17,7 +20,6 @@
   --border-style: 1px solid rgb(211, 179, 235);
   --backdrop-filter: blur(25px);
 }
-
 /* 首页文章卡片 */
 #recent-posts > .recent-post-item {
   background: var(--trans-light);
@@ -42,6 +44,7 @@ div#archive {
   backdrop-filter: var(-trans-light-wen);
   border: var(--border-style);
   border-radius: 20px;
+  backdrop-filter: blur(15px);
 }
 /* 导航栏 */
 #page-header.nav-fixed #nav {

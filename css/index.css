@@ -1363,7 +1363,7 @@ canvas:not(#ribbon-canvas),
   --blockquote-color: #6a737d;
   --blockquote-bg: rgba(170,119,255,0.1);
   --reward-pop: #f5f5f5;
-  --toc-link-color: #666261;
+  --toc-link-color: #000;
   --card-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
   --card-hover-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.09);
   --pseudo-hover: #a7f;
@@ -1490,7 +1490,7 @@ button {
   touch-action: manipulation;
 }
 a {
-  color: #99a9bf;
+  color: #f0f;
   text-decoration: none;
   word-wrap: break-word;
   -webkit-transition: all 0.2s;
@@ -6354,7 +6354,7 @@ blockquote.pullquote.right {
   position: relative;
   display: block;
   margin: 0 0 0 auto;
-  color: #99a9bf;
+  color: #101114;
 }
 @-moz-keyframes tabshow {
   0% {
