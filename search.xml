@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>济南面试</title>
+      <link href="/2023/05/16/%E6%B5%8E%E5%8D%97%E9%9D%A2%E8%AF%95/"/>
+      <url>/2023/05/16/%E6%B5%8E%E5%8D%97%E9%9D%A2%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p>首先要搞清楚一个概念 就是基本数据类型跟引用数据类型，很多问题的核心就是基于这两个区别搞得</p><h1 id="谈一谈数据库的事务"><a href="#谈一谈数据库的事务" class="headerlink" title="谈一谈数据库的事务"></a>谈一谈数据库的事务</h1><p><a href="https://zhuanlan.zhihu.com/p/512143490">点我</a></p><p>四点：</p><p>原子性，一致性，持久性，隔离性</p><p>隔离性又分四个等级：读未提交，读已提交，可重复读取，序列化</p><h1 id="谈一谈数据库的锁"><a href="#谈一谈数据库的锁" class="headerlink" title="谈一谈数据库的锁"></a>谈一谈数据库的锁</h1><p><a href="https://b23.tv/fK4KLMs">点我</a></p><iframe src="//player.bilibili.com/player.html?aid=651065759&bvid=BV1ZY4y1R7xE&cid=984085032&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><p>锁模式：共享锁，独占锁，共享意向锁，独占意向锁，自增锁</p><p>锁类型：表锁，行锁</p><p>行子类型：精准行锁，行gap锁，行nextkey锁，插入意向锁</p><h1 id="谈一谈数据库的索引"><a href="#谈一谈数据库的索引" class="headerlink" title="谈一谈数据库的索引"></a>谈一谈数据库的索引</h1><h1 id="谈一谈数据库的优化"><a href="#谈一谈数据库的优化" class="headerlink" title="谈一谈数据库的优化"></a>谈一谈数据库的优化</h1><h1 id="cookie与session的区别"><a href="#cookie与session的区别" class="headerlink" title="cookie与session的区别"></a>cookie与session的区别</h1><p>自己找吧</p><h1 id="如何自定义注解"><a href="#如何自定义注解" class="headerlink" title="如何自定义注解"></a>如何自定义注解</h1><p>这个在侧面问你你对aop的理解程度</p><p>自己找吧 因人而异</p><h1 id="重定向与转发的区别"><a href="#重定向与转发的区别" class="headerlink" title="重定向与转发的区别"></a>重定向与转发的区别</h1><p>重定向与转发的区别：<br>1.重定向访问服务器两次，转发只访问服务器一次。<br>2.重定向可以看见目标页面的URL，转发只能看见第一次访问的页面URL，以后的工作都是有服务器来做的。<br>3.重定向跳转后必须加上return，要不然页面虽然跳转了，但是还会执行跳转后面的语句，转发是执行了跳转页面，下面的代码就不会在执行了。<br>4.在request级别使用信息共享，使用重定向必然出错</p><p>5.还有一个大的区别就是，重定向可以访问自己web应用以外的资源</p><p>一、调用方式 </p><p>我们知道，在servlet中调用转发、重定向的语句如下：<br>request.getRequestDispatcher(“new.jsp”).forward(request, response);//转发到new.jsp<br>response.sendRedirect(“new.jsp”);//重定向到new.jsp </p><p>在jsp页面中你也会看到通过下面的方式实现转发： </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page=&quot;apage.jsp&quot; /&gt; </span><br></pre></td></tr></table></figure><p>当然也可以在jsp页面中实现重定向： </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%response.sendRedirect(&quot;new.jsp&quot;);//重定向到new.jsp%&gt; </span><br></pre></td></tr></table></figure><p>二、本质区别<br>解释一　　 </p><p>一句话，转发是服务器行为，重定向是客户端行为。为什么这样说呢，这就要看两个动作的工作流程： </p><p>转发过程：客户浏览器发送http请求——》web服务器接受此请求—》调用内部的一个方法在容器内部完成请求处理和转发动作——》将目标资源发送给客户；在这里，转发的路径必须是同一个web容器下的url，其不能转向到其他的web路径上去，中间传递的是自己的容器内的request。在客户浏览器路径栏显示的仍然是其第一次访问的路径，也就是说客户是感觉不到服务器做了转发的。转发行为是浏览器只做了一次访问请求。</p><p>重定向过程：客户浏览器发送http请求——》web服务器接受后发送302状态码响应及对应新的location给客户浏览器—》客户浏览器发现是302响应，则自动再发送一个新的http请求，请求url是新的location地址——》服务器根据此请求寻找资源并发送给客户。在这里location可以重定向到任意URL，既然是浏览器重新发出了请求，则就没有什么request传递的概念了。在客户浏览器路径栏显示的是其重定向的路径，客户可以观察到地址的变化的。重定向行为是浏览器做了至少两次的访问请求的。</p><p>解释二<br>重定向，其实是两次request,<br>第一次，客户端request A,服务器响应，并response回来，告诉浏览器，你应该去B。这个时候IE可以看到地址变了，而且历史的回退按钮也亮了。重定向可以访问自己web应用以外的资源。在重定向的过程中，传输的信息会被丢失。</p><p>例子：<br>请求转发是服务器内部把对一个request/response的处理权，移交给另外一个<br>对于客户端而言，它只知道自己最早请求的那个A，而不知道中间的B，甚至C、D。 传输的信息不会丢失。 </p><h1 id="Int和Integer的区别"><a href="#Int和Integer的区别" class="headerlink" title="Int和Integer的区别"></a>Int和Integer的区别</h1><p><a href="https://zhuanlan.zhihu.com/p/259535179">原地址</a></p><h2 id="什么是包装类？"><a href="#什么是包装类？" class="headerlink" title="什么是包装类？"></a>什么是包装类？</h2><p>在Java基础数据类型中，不是对象无法获取方法，导致基础类型无法转型、反射等过程，为了弥补这个缺陷，Java就使用了包装类的思想。</p><p>包装类就是将基础的数据类型分装的到类中。使基础类型可以转化成一个类的方式。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IntegerDemo</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> id;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">intID</span><span class="params">(<span class="type">int</span> id)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.id=id;</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">intIDDemo</span><span class="params">()</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">this</span>.id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Int和Integer的不同"><a href="#Int和Integer的不同" class="headerlink" title="Int和Integer的不同"></a>Int和Integer的不同</h2><ul><li>类进行初始化时int类的变量初始为0.而Integer的变量则初始化为null.</li><li>Integer变量必须实例化后才能使用，而int变量不需要 .</li><li>在Int是将值直接存储，Integer对象是生成指针指向此对象。所以<strong>Integer new出来的变量如果判断是否相等时，肯定是不同的。他两是对象，比的不是值是内存地址</strong>。</li></ul><h2 id="Int和Integer比较"><a href="#Int和Integer比较" class="headerlink" title="Int和Integer比较"></a>Int和Integer比较</h2><p>我们通过代码比较一下Int和Integer的区别</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Int_and_IntegerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;Int类型和Int比较++&quot;</span>);</span><br><span class="line">        <span class="type">int</span> i=<span class="number">1000</span>;<span class="type">int</span> j=<span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">if</span> (i==j)&#123;</span><br><span class="line">            System.out.println(<span class="literal">true</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;System.out.println(<span class="literal">false</span>);&#125;</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">&quot;对象和Int类型比较++&quot;</span>);</span><br><span class="line">        <span class="type">Integer</span> <span class="variable">integer1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">1000</span>);</span><br><span class="line">        <span class="type">int</span> i1=<span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">if</span> (i1==integer1)&#123;</span><br><span class="line">            System.out.println(<span class="literal">true</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;System.out.println(<span class="literal">false</span>);&#125;</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">&quot;new出来的非new出来的比较++&quot;</span>);</span><br><span class="line">        Integer integer=<span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">1000</span>);</span><br><span class="line">        Integer i2= <span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">if</span> (integer==i2)&#123;</span><br><span class="line">            System.out.println(<span class="literal">true</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;System.out.println(<span class="literal">false</span>);&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">&quot;都属于非new出来的比较++&quot;</span>);</span><br><span class="line">        Integer integer2=<span class="number">100</span>;</span><br><span class="line">        Integer i3= <span class="number">100</span>;</span><br><span class="line">        <span class="keyword">if</span> (integer2==i3)&#123;</span><br><span class="line">            System.out.println(<span class="literal">true</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;System.out.println(<span class="literal">false</span>);&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">&quot;都属于非new出来的比较++&quot;</span>);</span><br><span class="line">        Integer integer3=<span class="number">1000</span>;</span><br><span class="line">        Integer i4= <span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">if</span> (integer3==i4)&#123;</span><br><span class="line">            System.out.println(<span class="literal">true</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;System.out.println(<span class="literal">false</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Int类型和Int比较++true</p><p>对象和Int类型比较++true</p><p>new出来的非new出来的比较++false</p><p>都属于非new出来的比较++true</p><p>都属于非new出来的比较++false</p><ol><li>我们发现Integer变量和int变量比较时，只要两个变量的值是向等的，则结果为true。 <strong>因为包装类Integer和基本数据类型int比较时，java会自动拆包装为int，然后进行比较，实际上就变为两个int变量的比较。</strong></li><li>非new生成的Integer变量和new Integer()生成的变量比较时，结果为false。 <strong>因为 Integer当变量值在-128~127之间时，非new生成的Integer变量指向的是java常量池中的对象，而new Integer()生成的变量指向堆中新建的对象，两者在内存中的地址不同；</strong></li><li>而两个new出来的Interger比较时是不可能相等的，他们两是对象。。。</li></ol><p><strong>如果有错误的地方，还请指正。</strong></p><hr><p>补充:<strong>这里就是一个坑</strong>,面试题经常会考这个问题</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种情况当i的值处于(-128,127)之间,直接返回Integer缓存数组中相应对象的引用</span></span><br><span class="line">    <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">    <span class="comment">//如果i大于127或小于-128，会重新创建一个Integer实例，并返回。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(i);</span><br></pre></td></tr></table></figure><p>什么意思呢,就是同样一个值,都是new出来的数,如果大于127或小于-128，它创建出来实例会刷新在栈里面的指针,两个值就不等了,下图中比较的已经不是值了,是在栈中的指针,因为不是同一个对象所以指针也不会相同.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这时候两个对象就不相等了,因为他们已经不是同一个对象了</span></span><br><span class="line">  <span class="type">Integer</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line">   <span class="type">Integer</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>(a==b)&#123;</span><br><span class="line">   System.out.printIn(<span class="string">&quot;true&quot;</span>);</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">   System.out.printIn(<span class="string">&quot;false&quot;</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><p>Integer new和不new有啥区别?*</p><p>给类new一个对象,new出来的是实例对象.</p><p>没有new就创建的对象是类对象</p><p>没new的对象 只能访问该类中的静态方法或静态成员变量</p><h1 id="tcp和ucp的区别"><a href="#tcp和ucp的区别" class="headerlink" title="tcp和ucp的区别"></a>tcp和ucp的区别</h1><iframe src="//player.bilibili.com/player.html?aid=721149641&bvid=BV15Q4y1z7eS&cid=427639726&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><h1 id="谈一谈toString-、string-valueOf-、（String）xxx"><a href="#谈一谈toString-、string-valueOf-、（String）xxx" class="headerlink" title="谈一谈toString()、string.valueOf()、（String）xxx"></a>谈一谈toString()、string.valueOf()、（String）xxx</h1><iframe src="//player.bilibili.com/player.html?aid=552275739&bvid=BV19i4y1C7Nm&cid=552678451&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java一些思路</title>
       <link href="/2023/03/09/Java%E6%80%9D%E8%B7%AF/"/>
       <url>/2023/03/09/Java%E6%80%9D%E8%B7%AF/</url>
@@ -182,11 +207,11 @@
       
         <tags>
             
+            <tag> Html </tag>
+            
             <tag> Js </tag>
             
             <tag> Css </tag>
-            
-            <tag> Html </tag>
             
         </tags>
       
@@ -211,9 +236,9 @@
       
         <tags>
             
-            <tag> Js </tag>
-            
             <tag> Html </tag>
+            
+            <tag> Js </tag>
             
         </tags>
       
@@ -292,11 +317,11 @@
       
         <tags>
             
+            <tag> Html </tag>
+            
             <tag> Js </tag>
             
             <tag> Css </tag>
-            
-            <tag> Html </tag>
             
         </tags>
       
@@ -321,11 +346,11 @@
       
         <tags>
             
+            <tag> Html </tag>
+            
             <tag> Js </tag>
             
             <tag> Css </tag>
-            
-            <tag> Html </tag>
             
         </tags>
       
@@ -350,11 +375,11 @@
       
         <tags>
             
+            <tag> Html </tag>
+            
             <tag> Js </tag>
             
             <tag> Css </tag>
-            
-            <tag> Html </tag>
             
         </tags>
       
